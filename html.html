@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ボタンテスト</title>
+  <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .c-btn.slide {
+      background: #fff;
+      color: #ff701e;
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+      padding: 12px 30px;
+      font-size: 18px;
+      border: 2px solid #ff701e;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .c-btn.slide::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ff701e;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      z-index: -1;
+    }
+
+    .c-btn.slide:hover::after {
+      transform: scaleX(1);
+    }
+
+    .c-btn.slide:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="c-btn slide">詳しく見る</a>
+</body>
+</html>
